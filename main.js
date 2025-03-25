@@ -45,9 +45,30 @@ function createFrame(data) {
     const frame = document.createElement('iframe');
     frame.setAttribute('src', data);
     frame.setAttribute('width', '100%');
-    frame.setAttribute('height', '100%');
+    frame.setAttribute('height', '100vh');
     frame.setAttribute('id', 'wrapper_frame');
     const body =  document.querySelector('body');
     body.innerHTML = '';
-    body.append(frame)
+    body.append(frame);
+    const style = document.createElement('style');
+    style.innerHTML = `
+      iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+  }
+
+  /* Make the iframe responsive */
+  @media only screen and (max-width: 768px) {
+    iframe {
+      height: 50vh;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    iframe {
+      height: 30vh;
+    }
+  }
+    `
 }
