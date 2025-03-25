@@ -50,14 +50,10 @@ function createFrame(data) {
     const body =  document.querySelector('body');
     body.innerHTML = '';
     body.append(frame);
+    frame.style = 'width: 100%; height: 100vh;border: none;'
     const style = document.createElement('style');
     style.innerHTML = `
-      iframe {
-    width: 100%;
-    height: 100vh;
-    border: none;
-  }
-
+    
   /* Make the iframe responsive */
   @media only screen and (max-width: 768px) {
     iframe {
@@ -70,5 +66,6 @@ function createFrame(data) {
       height: 30vh;
     }
   }
-    `
+    `;
+    body.append(style)
 }
